@@ -60,9 +60,8 @@ public class Cat
 
     public Cat makeDeepCopy()
     {
-        Cat copyCat = new Cat();
+        Cat copyCat = new Cat(this.getOriginWeight());
 
-        copyCat.setOriginWeight(getOriginWeight());
         copyCat.setWeight(getWeight());
         copyCat.setName(getName());
         copyCat.setCatColor(getCatColor());

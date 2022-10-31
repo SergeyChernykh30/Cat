@@ -36,6 +36,9 @@ public class Loader
         System.out.println("Cat4 name is " + cat4.getName());
         System.out.println("Cat4 color is " + cat4.getCatColor());
 
+        System.out.println("Cat1 orig weight is " + cat1.getOriginWeight());
+        System.out.println("Cat4 orig weight is " + cat4.getOriginWeight());
+
         System.out.println(cat1);
         System.out.println(cat4);
     }
