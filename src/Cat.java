@@ -1,7 +1,7 @@
 
 public class Cat
 {
-    private final double ORIGIN_WEIGHT;
+    private final double originWeight;
     private double weight;
 
     private static final double MIN_WEIGHT = 1000.0;
@@ -14,8 +14,8 @@ public class Cat
     public Cat()
     {
         weight = 1500.0 + 3000.0 * Math.random();
-        ORIGIN_WEIGHT = weight;
-        count += 1;
+        originWeight = weight;
+        count++;
     }
 
     public Cat(double weight)
@@ -28,7 +28,7 @@ public class Cat
     {
         weight = weight - 1;
         if(weight < MIN_WEIGHT) {
-            count -= 1;
+            count--;
         }
         System.out.println("Meow");
     }
@@ -38,13 +38,13 @@ public class Cat
         weight = weight + amount;
 
         if(weight > MAX_WEIGHT) {
-        count -= 1;
+        count--;
         }
     }
 
     public Double getFeedAmount()
     {
-        return weight - ORIGIN_WEIGHT;
+        return weight - originWeight;
     }
 
     public void drink(Double amount)
@@ -58,23 +58,19 @@ public class Cat
         System.out.println("Cat is go to toilet :)");
     }
 
-    public void fullCopyCat(Cat catForCopy)
+    public Cat makeDeepCopy()
     {
         Cat copyCat = new Cat();
 
-        this.setORIGIN_WEIGHT(catForCopy.getORIGIN_WEIGHT());
-        this.setWeight(catForCopy.getWeight());
-        this.setName(catForCopy.getName());
-        this.setCatColor(catForCopy.getCatColor());
+        copyCat.setOriginWeight(getOriginWeight());
+        copyCat.setWeight(getWeight());
+        copyCat.setName(getName());
+        copyCat.setCatColor(getCatColor());
 
-        //return copyCat;
+        return copyCat;
     }
 
     public void setCatColor(CatColor catColor) {this.catColor =  catColor;}
-    /*public void SetCatColor(CatColor setCatColor)
-    {
-        this.catColor =  setCatColor;
-    }*/
 
     public static int getCount()
     {
@@ -91,12 +87,12 @@ public class Cat
         this.weight = setWeight;
     }
 
-    public Double getORIGIN_WEIGHT()
+    public Double getOriginWeight()
     {
-        return ORIGIN_WEIGHT;
+        return originWeight;
     }
 
-    public void setORIGIN_WEIGHT(Double setOriginWeight)
+    public void setOriginWeight(Double setOriginWeight)
     {
         this.weight = setOriginWeight;
     }
@@ -109,7 +105,7 @@ public class Cat
         else if(weight > MAX_WEIGHT) {
             return "Exploded";
         }
-        else if(weight > ORIGIN_WEIGHT) {
+        else if(weight > originWeight) {
             return "Sleeping";
         }
         else {
@@ -120,11 +116,6 @@ public class Cat
     public CatColor getCatColor()
     {
         return catColor;
-    }
-
-    public void SetCatColor(CatColor setCatColor)
-    {
-        this.catColor =  setCatColor;
     }
 
     public String getName()
