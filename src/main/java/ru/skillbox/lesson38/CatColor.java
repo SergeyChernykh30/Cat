@@ -1,3 +1,5 @@
+package ru.skillbox.lesson38;
+
 public enum CatColor
 {
     BLACK,
@@ -8,7 +10,7 @@ public enum CatColor
 
     /*private String color;
 
-    CatColor(String color)
+    main.java.ru.skillbox.lesson38.CatColor(String color)
     {
         this.color = color;
     }

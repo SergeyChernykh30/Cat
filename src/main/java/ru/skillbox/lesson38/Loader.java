@@ -1,3 +1,4 @@
+package ru.skillbox.lesson38;
 
 public class Loader
 {
@@ -15,18 +16,18 @@ public class Loader
         Cat cat3 = CreateNewCat(3000.0);
         Cat cat4 = new Cat();
 
-        cat1.SetCatColor(CatColor.BLACK);
+        cat1.setCatColor(CatColor.BLACK);
         System.out.println("Cat1 color is " + cat1.getCatColor());
 
-        cat2.SetCatColor(CatColor.GRAY);
+        cat2.setCatColor(CatColor.GRAY);
         System.out.println("Cat2 color is " + cat2.getCatColor());
 
-        cat3.SetCatColor(CatColor.MULTICOLOR);
+        cat3.setCatColor(CatColor.MULTICOLOR);
         System.out.println("Cat3 color is " + cat3.getCatColor());
 
         cat1.setName("Myrka");
 
-        cat4.fullCopyCat(cat1);
+        cat4.fullCopyCat();
 
         System.out.println("Cat1 weight is " + cat1.getWeight());
         System.out.println("Cat4 weight is " + cat4.getWeight());
