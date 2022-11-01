@@ -1,7 +1,7 @@
 
 public class Cat
 {
-    private final double originWeight;
+    private double originWeight;
     private double weight;
 
     private static final double MIN_WEIGHT = 1000.0;
@@ -60,8 +60,9 @@ public class Cat
 
     public Cat makeDeepCopy()
     {
-        Cat copyCat = new Cat(this.getOriginWeight());
+        Cat copyCat = new Cat();
 
+        copyCat.setOriginWeight(getOriginWeight());
         copyCat.setWeight(getWeight());
         copyCat.setName(getName());
         copyCat.setCatColor(getCatColor());
@@ -93,7 +94,7 @@ public class Cat
 
     public void setOriginWeight(Double setOriginWeight)
     {
-        this.weight = setOriginWeight;
+        this.originWeight = setOriginWeight;
     }
 
     public String getStatus()
